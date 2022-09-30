@@ -1,6 +1,6 @@
 import { create } from 'apisauce';
 
-const api = create({ baseURL: 'https://itunes.apple.com' });
+// const api = create({ baseURL: 'https://itunes.apple.com' });
 
 const useApiSauce = () => {
   const apiCall = async (param: any) => {
