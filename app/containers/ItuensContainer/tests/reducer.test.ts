@@ -1,7 +1,13 @@
-import ituneReducer, { initialState, getSearchTerm, getDataToShow, getErrorFromResponse } from '../reducer';
+import ituneReducer, {
+  ApiResponseState,
+  initialState,
+  getSearchTerm,
+  getDataToShow,
+  getErrorFromResponse
+} from '../reducer';
 
 describe('ItuneContainer reducer test', () => {
-  let state: typeof initialState;
+  let state: ApiResponseState;
   beforeEach(() => {
     state = initialState;
   });
