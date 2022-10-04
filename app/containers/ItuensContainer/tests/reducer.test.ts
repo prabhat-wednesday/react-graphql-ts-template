@@ -1,4 +1,3 @@
-import { SongData } from '../types';
 import ituneReducer, { initialState, getSearchTerm, getDataToShow, getErrorFromResponse } from '../reducer';
 
 describe('ItuneContainer reducer test', () => {
@@ -22,8 +21,9 @@ describe('ItuneContainer reducer test', () => {
   });
 
   it('should ensure that the search data is present when SUCCESS_GET_SEARCH_TERM', () => {
-    const dataToShow: SongData = {
-      Songs: [
+    const dataToShow = {
+      resultCount: 50,
+      results: [
         {
           trackId: 1,
           artistName: 'Yung Xiety',
