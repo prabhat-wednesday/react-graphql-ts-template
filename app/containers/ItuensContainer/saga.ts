@@ -16,6 +16,7 @@ export function* fetchDataFromItune(action: any): Generator<any, any> {
 }
 
 function* ituneCallSaga() {
+  console.log('before fetch call function');
   yield takeLatest(getSearchTerm.toString(), fetchDataFromItune);
 }
 
