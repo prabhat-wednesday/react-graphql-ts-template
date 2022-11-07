@@ -55,7 +55,7 @@ jobs:
         with:
           author_name: Gitflow
           author_email: git@wednesday.is
-          message: 'Update badges'
+          feat: update badges.
           add: 'badges/'
           push: false
       - name: Git pull origin
