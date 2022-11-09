@@ -107,19 +107,21 @@ module.exports = require('./webpack.config.base')({
 
     new WebpackPwaManifest({
       name: 'React Template',
-      short_name: 'React T',
-      description: 'Wednesday React Template!',
+      short_name: 'Itune App',
       background_color: '#fafafa',
+      id: '/?source=pwa',
+      start_url: '/?source=pwa',
       theme_color: '#b1624d',
       inject: true,
       ios: true,
       icons: [
         {
-          src: path.resolve('app/images/icon-512x512.png'),
-          sizes: [72, 96, 128, 144, 192, 384, 512]
+          src: path.resolve('app/images/music-note.png'),
+          sizes: [72, 96, 128, 144, 192, 384, 512],
+          purpose: 'maskable'
         },
         {
-          src: path.resolve('app/images/icon-512x512.png'),
+          src: path.resolve('app/images/music-note.png'),
           sizes: [120, 152, 167, 180],
           ios: true
         }
