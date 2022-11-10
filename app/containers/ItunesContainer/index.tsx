@@ -4,7 +4,7 @@ import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { injectSaga } from 'redux-injectors';
 import { AnyAction, compose } from '@reduxjs/toolkit';
-import { selectSongListError, selectLoading, selectSongData } from './selector';
+import { selectLoading, selectSongData } from './selector';
 import { requestGetSongList } from '../SongProviderContainer/reducer';
 import ituneCallSaga from './saga';
 import { ItuneContainerProps, RequestSongListActionPayload } from './types';
@@ -12,9 +12,10 @@ import ItuneSongList from '@app/components/ItuneSongList';
 import styled from 'styled-components';
 import { Input, Pagination, PaginationProps } from 'antd';
 import { media } from '@app/themes';
-import { ErrorHandler, T } from '@app/components';
+import { If, T } from '@app/components';
 import { useHistory } from 'react-router-dom';
 import { setQueryParam } from '@app/utils';
+import { isEmpty } from 'lodash-es';
 
 const InputContainer = styled.div`
   && {
@@ -41,7 +42,8 @@ const CustomPagination = styled(Pagination)`
   justify-content: center;
 `;
 
-const ItunesContainer = ({ dispatchSongList, songData, loading, songListError }: ItuneContainerProps) => {
+const ItunesContainer = ({ dispatchSongList, songData, loading }: ItuneContainerProps) => {
+  const { results } = songData;
   const [paginationParams, setPaginationParams] = useState({ pageNumber: 1, pageSize: 10 });
   const history = useHistory();
   const artistName = new URLSearchParams(history.location.search).get('artist_name');
@@ -70,7 +72,6 @@ const ItunesContainer = ({ dispatchSongList, songData, loading, songListError }:
       dispatchSongList({ artistName });
     }
   }, 500);
-
   return (
     <div>
       <InputContainer>
@@ -83,16 +84,16 @@ const ItunesContainer = ({ dispatchSongList, songData, loading, songListError }:
         />
       </InputContainer>
       <ItuneSongList loading={loading} songData={songData} />
-      <ErrorHandler loading={loading} launchListError={songListError} />
-      <CustomPagination onChange={handlePaginationOnChange} defaultCurrent={1} total={50} />
+      <If condition={!isEmpty(results)}>
+        <CustomPagination onChange={handlePaginationOnChange} defaultCurrent={1} total={50} />
+      </If>
     </div>
   );
 };
 
 const mapStateToProps = createStructuredSelector({
   loading: selectLoading(),
-  songData: selectSongData(),
-  songListError: selectSongListError()
+  songData: selectSongData()
 });
 
 export function mapDispatchToProps(dispatch: (arg0: AnyAction) => any) {
