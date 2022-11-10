@@ -114,6 +114,8 @@ module.exports = require('./webpack.config.base')({
       theme_color: '#b1624d',
       inject: true,
       ios: true,
+      includeDirectory: true,
+      crossorigin: null,
       icons: [
         {
           src: path.resolve('app/images/music-note.png'),
