@@ -58,7 +58,7 @@ describe('<ProtectedRoute /> tests', () => {
 
   it('should redirect to the dashboard if logged in and accessing login page(unprotected)', () => {
     const { queryByText } = renderProvider(
-      <ProtectedRoute isLoggedIn={true} render={HomeContainer} exact={true} path="/login" />
+      <ProtectedRoute isLoggedIn={true} render={HomeContainer} exact={true} path="/" />
     );
     expect(queryByText(RENDER_TEXT)).toBeNull();
   });
