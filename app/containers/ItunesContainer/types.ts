@@ -6,6 +6,8 @@ export interface Song {
   artworkUrl100: string;
   collectionName: string;
   previewUrl: string;
+  trackPrice: number;
+  primaryGenreName: string;
 }
 
 export interface SongData {

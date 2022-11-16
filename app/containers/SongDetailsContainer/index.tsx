@@ -10,6 +10,7 @@ import { Card } from 'antd';
 import { get } from 'lodash-es';
 import styled from 'styled-components';
 import { media } from '@app/themes';
+import { T } from '@app/components';
 
 const { Meta } = Card;
 
@@ -20,11 +21,16 @@ interface SongDetailsProps {
 }
 
 const CustomCard = styled(Card)`
+  && .ant-card-cover {
+    height: 100%;
+  }
   && {
     padding: 5px;
     margin: 0.5rem;
-    width: 17rem;
-
+    width: 30%;
+    height: 15rem;
+    display: flex;
+    justify-content: space-between;
     ${media.lessThan('tablet')`
       width: 12rem;
       margin: 0.5rem;
@@ -34,7 +40,7 @@ const CustomCard = styled(Card)`
 
 const StyledImg = styled.img`
   && {
-    max-height: 15rem;
+    height: 100%;
     object-fit: cover;
   }
 `;
@@ -42,6 +48,13 @@ const StyledImg = styled.img`
 const StyledMeta = styled(Meta)`
   && {
     padding: 5px;
+  }
+`;
+
+const StyledT = styled(T)`
+  && {
+    padding: 2px 2px 2px 5px;
+    margin: 0;
   }
 `;
 
@@ -55,8 +68,7 @@ const SongDetails = ({ songData }: SongDetailsProps) => {
   const params = useParams<{ trackId?: string }>();
   const { trackId } = params;
   const singleSong = results?.find((result) => result.trackId === Number(trackId));
-  const { artistName, collectionName, artworkUrl100 } = singleSong ?? {};
-
+  const { artistName, collectionName, artworkUrl100, trackPrice, primaryGenreName } = singleSong ?? {};
   return (
     <CustomSongDetailsContainer>
       <Helmet>
@@ -65,10 +77,11 @@ const SongDetails = ({ songData }: SongDetailsProps) => {
       </Helmet>
       <CustomCard
         hoverable
-        bodyStyle={{ padding: '10px' }}
-        cover={<StyledImg src={artworkUrl100} loading="lazy" data-testid="cover-img" />}
+        cover={<StyledImg src={artworkUrl100?.replaceAll('100', '400')} loading="lazy" data-testid="cover-img" />}
       >
         <StyledMeta title={artistName} description={collectionName} />
+        <StyledT text={`$ ${trackPrice?.toString()}`} />
+        <StyledT text={primaryGenreName} />
       </CustomCard>
     </CustomSongDetailsContainer>
   );

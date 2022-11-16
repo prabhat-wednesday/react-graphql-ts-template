@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SongDetailsContainer test should render and match the snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="SongDetailsContainer__CustomSongDetailsContainer-gu3src-4 cTRwQg"
+    >
+      <div
+        class="ant-card ant-card-bordered ant-card-hoverable SongDetailsContainer__CustomCard-gu3src-0 lkidkL"
+      >
+        <div
+          class="ant-card-cover"
+        >
+          <img
+            class="SongDetailsContainer__StyledImg-gu3src-1 hnNURB"
+            data-testid="cover-img"
+            loading="lazy"
+          />
+        </div>
+        <div
+          class="ant-card-body"
+        >
+          <div
+            class="ant-card-meta SongDetailsContainer__StyledMeta-gu3src-2 bKPOYA"
+          />
+          <p
+            class="T__StyledText-gcrjip-0 gIxZML SongDetailsContainer__StyledT-gu3src-3 eBnitJ"
+            data-testid="t"
+          >
+            $ undefined
+          </p>
+          <p
+            class="T__StyledText-gcrjip-0 gIxZML SongDetailsContainer__StyledT-gu3src-3 eBnitJ"
+            data-testid="t"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
