@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Button, Form, Input } from 'antd';
+import { Button, Form } from 'antd';
 
 import { requestGetUserData } from './reducer';
 import { AnyAction, compose } from '@reduxjs/toolkit';
 import { connect } from 'react-redux';
+import { For } from '@app/components';
+import FormInput from '@app/components/FormInput';
 
 const FormContainer = styled.div`
   width: 50%;
@@ -13,13 +15,15 @@ const FormContainer = styled.div`
   border: 1px black solid;
 `;
 
-const StyledInput = styled(Input)`
-  width: 100%;
-`;
-
-interface LoginContainerProps {
+export interface LoginContainerProps {
   dispatchUserData: (payload: any) => AnyAction;
 }
+
+const FormInputArray = [
+  { label: 'Username', name: 'username', message: 'Please input your username!' },
+  { label: 'EmailId', name: 'emailId', message: 'Please input your emailid!' },
+  { label: 'Password', name: 'password', message: 'Please input your password!' }
+];
 
 const LoginContainer = ({ dispatchUserData }: LoginContainerProps) => {
   const [form] = Form.useForm();
@@ -30,29 +34,18 @@ const LoginContainer = ({ dispatchUserData }: LoginContainerProps) => {
 
   return (
     <FormContainer>
-      <Form form={form} name="basic" initialValues={{ remember: true }} onFinish={onFinish} autoComplete="off">
-        <Form.Item
-          label="Username"
-          name="username"
-          rules={[{ required: true, message: 'Please input your username!' }]}
-        >
-          <StyledInput />
-        </Form.Item>
-
-        <Form.Item label="EmailId" name="emailId" rules={[{ required: true, message: 'Please input your emailid!' }]}>
-          <StyledInput />
-        </Form.Item>
-
-        <Form.Item
-          label="Password"
-          name="password"
-          rules={[{ required: true, message: 'Please input your password!' }]}
-        >
-          <StyledInput />
-        </Form.Item>
+      <Form
+        data-testid="loginForm"
+        form={form}
+        name="basic"
+        initialValues={{ remember: true }}
+        onFinish={onFinish}
+        autoComplete="off"
+      >
+        <For orientation={'column'} of={FormInputArray} renderItem={(item) => <FormInput {...item} />} />
 
         <Form.Item>
-          <Button type="primary" htmlType="submit">
+          <Button data-testid="submitButton" type="primary" htmlType="submit">
             Submit
           </Button>
         </Form.Item>
@@ -61,7 +54,7 @@ const LoginContainer = ({ dispatchUserData }: LoginContainerProps) => {
   );
 };
 
-function mapDispatchToProps(dispatch: (arg0: AnyAction) => any) {
+export function mapDispatchToProps(dispatch: (arg0: AnyAction) => any) {
   return {
     dispatchUserData: (payload: any) => dispatch(requestGetUserData(payload))
   };
@@ -69,3 +62,4 @@ function mapDispatchToProps(dispatch: (arg0: AnyAction) => any) {
 
 const withConnect = connect(null, mapDispatchToProps);
 export default compose(withConnect)(LoginContainer);
+export const LoginContainerTest = LoginContainer;
