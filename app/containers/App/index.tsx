@@ -19,7 +19,6 @@ import { routeConfig } from '@app/routeConfig';
 import { Switch } from 'react-router-dom';
 import { createStructuredSelector } from 'reselect';
 import { selectIsUserLoggedIn, selectUserData } from './selector';
-import { isEmpty } from 'lodash-es';
 const theme = {
   fg: colors.primary,
   bg: colors.secondaryText,
@@ -63,3 +62,4 @@ const mapStateToProps = createStructuredSelector({
 
 const withConnect = connect(mapStateToProps);
 export default compose(withConnect, withRouter)(App);
+export const AppTest = App;

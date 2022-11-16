@@ -13,6 +13,7 @@ describe('<ItuneContainer /> test', () => {
     submitSpy = jest.fn();
     defaultProps = {
       dispatchSongList: submitSpy,
+      dispatchLogoutUser: submitSpy,
       loading: true,
       songData: {
         results: [
@@ -23,7 +24,9 @@ describe('<ItuneContainer /> test', () => {
               'https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/3b/cc/31/3bcc315a-e58f-c678-8d05-b7d62346070f/1d724fe3-daaa-4825-91f0-a47e70a438bd.jpg/100x100bb.jpg',
             collectionName: 'Arijit Singh (Mashup) - Single',
             previewUrl:
-              'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/90/d6/0d/90d60d3b-2b95-8c84-f9aa-f69a2793d22c/mzaf_17815855687762407827.plus.aac.p.m4a'
+              'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/90/d6/0d/90d60d3b-2b95-8c84-f9aa-f69a2793d22c/mzaf_17815855687762407827.plus.aac.p.m4a',
+            trackPrice: 123,
+            primaryGenreName: 'Hindi Song'
           }
         ]
       }
