@@ -79,7 +79,7 @@ const ItunesContainer = ({ dispatchSongList, songData, loading, dispatchLogoutUs
     <div>
       <InputContainer>
         <button onClick={dispatchLogoutUser}>Logout</button>
-        <T data-testid="search-label" id="song_search_default" />
+        <T data-testid="search-label" id="song_search_heading" />
         <CustomInput
           data-testid="search-bar"
           aria-label="input-element"

@@ -12,7 +12,7 @@
   "type_label": "<b>Type</b> {type}",
   "ships": "Ships ",
   "rocket": "Rocket ",
-  "song_search_default": "Search your favourite singer",
+  "song_search_heading": "Search your favourite singer",
   "label_1": "Username",
   "label_2": "EmailId",
   "label_3": "Password",
