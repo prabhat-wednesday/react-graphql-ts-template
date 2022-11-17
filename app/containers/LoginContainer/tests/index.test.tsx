@@ -1,8 +1,9 @@
 import React from 'react';
 import { fireEvent } from '@testing-library/react';
-import { renderProvider, timeout } from '@app/utils/testUtils';
+import { renderProvider, timeout, renderWithIntl } from '@app/utils/testUtils';
 import { requestGetUserData } from '../reducer';
 import { LoginContainerTest as LoginContainer, LoginContainerProps, mapDispatchToProps } from '..';
+import { translate } from '@app/components/IntlGlobalProvider';
 
 describe('<LoginContainer tests', () => {
   let submitSpy: jest.Mock;
@@ -59,5 +60,32 @@ describe('<LoginContainer tests', () => {
     await timeout(500);
     expect(onFinishSpy).toBeCalled();
     expect(submitSpy).toBeCalled();
+  });
+
+  it('should check if error msg get print on the screen when input field is empty ', async () => {
+    const submitSpy = jest.fn();
+    const { getByTestId, getAllByTestId, getByText } = renderWithIntl(<LoginContainer dispatchUserData={submitSpy} />);
+    const onFinishSpy = jest.fn();
+    const LoginForm = getByTestId('loginForm');
+    const LoginInputs = getAllByTestId('formInput') as HTMLInputElement[];
+    LoginForm.onsubmit = onFinishSpy;
+
+    fireEvent.change(LoginInputs[0], {
+      target: { value: '' }
+    });
+    fireEvent.change(LoginInputs[1], {
+      target: { value: '' }
+    });
+    fireEvent.change(LoginInputs[2], {
+      target: { value: '' }
+    });
+    fireEvent.submit(LoginForm);
+    await timeout(500);
+    const ErrorMsg1 = getByText(translate('msg_1'));
+    const ErrorMsg2 = getByText(translate('msg_2'));
+    const ErrorMsg3 = getByText(translate('msg_3'));
+    expect(ErrorMsg1).toBeInTheDocument();
+    expect(ErrorMsg2).toBeInTheDocument();
+    expect(ErrorMsg3).toBeInTheDocument();
   });
 });
