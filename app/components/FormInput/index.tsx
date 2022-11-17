@@ -15,7 +15,6 @@ interface FormInputProps {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 const FormInput = ({ label, name, message, required, onChange }: FormInputProps) => {
-  console.log(onChange, 'in input form');
   return (
     <Form.Item label={translate(label)} name={translate(name)} rules={[{ required, message: translate(message) }]}>
       <StyledInput onChange={onChange} data-testid="formInput" />

@@ -46,7 +46,6 @@ const CustomPagination = styled(Pagination)`
 `;
 
 const ItunesContainer = ({ dispatchSongList, songData, loading, dispatchLogoutUser }: ItuneContainerProps) => {
-  console.log(db);
   const { results } = songData;
   const [paginationParams, setPaginationParams] = useState({ pageNumber: 1, pageSize: 10 });
   const history = useHistory();
