@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
 import get from 'lodash-es/get';
-import { initialState } from '../LoginContainer/reducer';
+import { initialState } from './reducer';
 
 export const selectLoginState = (state: any) => state.loginReducer || initialState;
 

@@ -18,7 +18,7 @@ import { For, ProtectedRoute } from '@app/components';
 import { routeConfig } from '@app/routeConfig';
 import { Switch } from 'react-router-dom';
 import { createStructuredSelector } from 'reselect';
-import { selectIsUserLoggedIn, selectUserData } from './selector';
+import { selectIsUserLoggedIn, selectUserData } from '../LoginContainer/selector';
 const theme = {
   fg: colors.primary,
   bg: colors.secondaryText,
