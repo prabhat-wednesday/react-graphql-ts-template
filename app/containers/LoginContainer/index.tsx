@@ -8,6 +8,15 @@ import { connect } from 'react-redux';
 import { For } from '@app/components';
 import FormInput from '@app/components/FormInput';
 
+const Container = styled.div`
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-top: 3rem;
+`;
+
 const FormContainer = styled.div`
   width: 50%;
   margin: 5rem auto;
@@ -20,9 +29,9 @@ export interface LoginContainerProps {
 }
 
 const FormInputArray = [
-  { label: 'Username', name: 'username', message: 'Please input your username!' },
-  { label: 'EmailId', name: 'emailId', message: 'Please input your emailid!' },
-  { label: 'Password', name: 'password', message: 'Please input your password!' }
+  { label: 'label_1', name: 'name_1', message: 'msg_1', required: true },
+  { label: 'label_2', name: 'name_2', message: 'msg_2', required: true },
+  { label: 'label_3', name: 'name_3', message: 'msg_3', required: true }
 ];
 
 const LoginContainer = ({ dispatchUserData }: LoginContainerProps) => {
@@ -31,26 +40,27 @@ const LoginContainer = ({ dispatchUserData }: LoginContainerProps) => {
     dispatchUserData(values);
     form.resetFields();
   };
-
   return (
-    <FormContainer>
-      <Form
-        data-testid="loginForm"
-        form={form}
-        name="basic"
-        initialValues={{ remember: true }}
-        onFinish={onFinish}
-        autoComplete="off"
-      >
-        <For orientation={'column'} of={FormInputArray} renderItem={(item) => <FormInput {...item} />} />
+    <Container>
+      <FormContainer>
+        <Form
+          data-testid="loginForm"
+          form={form}
+          name="basic"
+          initialValues={{ remember: true }}
+          onFinish={onFinish}
+          autoComplete="off"
+        >
+          <For orientation={'column'} of={FormInputArray} renderItem={(item) => <FormInput {...item} />} />
 
-        <Form.Item>
-          <Button data-testid="submitButton" type="primary" htmlType="submit">
-            Submit
-          </Button>
-        </Form.Item>
-      </Form>
-    </FormContainer>
+          <Form.Item>
+            <Button data-testid="submitButton" type="primary" htmlType="submit">
+              Submit
+            </Button>
+          </Form.Item>
+        </Form>
+      </FormContainer>
+    </Container>
   );
 };
 
