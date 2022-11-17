@@ -81,9 +81,9 @@ describe('<LoginContainer tests', () => {
     });
     fireEvent.submit(LoginForm);
     await timeout(500);
-    const ErrorMsg1 = getByText(translate('msg_1'));
-    const ErrorMsg2 = getByText(translate('msg_2'));
-    const ErrorMsg3 = getByText(translate('msg_3'));
+    const ErrorMsg1 = getByText(translate('msg_for_username'));
+    const ErrorMsg2 = getByText(translate('msg_for_emailid'));
+    const ErrorMsg3 = getByText(translate('msg_for_password'));
     expect(ErrorMsg1).toBeInTheDocument();
     expect(ErrorMsg2).toBeInTheDocument();
     expect(ErrorMsg3).toBeInTheDocument();

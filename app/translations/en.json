@@ -13,13 +13,13 @@
   "ships": "Ships ",
   "rocket": "Rocket ",
   "song_search_heading": "Search your favourite singer",
-  "label_1": "Username",
-  "label_2": "EmailId",
-  "label_3": "Password",
-  "name_1": "username",
-  "name_2": "emailId",
-  "name_3": "password",
-  "msg_1": "Please input your username!",
-  "msg_2": "Please input your emailid!",
-  "msg_3": "Please input your password!"
+  "label_username": "Username",
+  "label_emailId": "EmailId",
+  "label_password": "Password",
+  "username": "username",
+  "emailId": "emailId",
+  "password": "password",
+  "msg_for_username": "Please input your username!",
+  "msg_for_emailid": "Please input your emailid!",
+  "msg_for_password": "Please input your password!"
 }

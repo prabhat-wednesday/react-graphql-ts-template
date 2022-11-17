@@ -29,9 +29,9 @@ export interface LoginContainerProps {
 }
 
 const FormInputArray = [
-  { label: 'label_1', name: 'name_1', message: 'msg_1', required: true },
-  { label: 'label_2', name: 'name_2', message: 'msg_2', required: true },
-  { label: 'label_3', name: 'name_3', message: 'msg_3', required: true }
+  { label: 'label_username', name: 'username', message: 'msg_for_username', required: true },
+  { label: 'label_emailId', name: 'emailId', message: 'msg_for_emailid', required: true },
+  { label: 'label_password', name: 'password', message: 'msg_for_password', required: true }
 ];
 
 const LoginContainer = ({ dispatchUserData }: LoginContainerProps) => {
