@@ -7,11 +7,117 @@ exports[`<LoginContainer tests should render and match the snapshot 1`] = `
       class="LoginContainer__Container-sk1ioa-0 jvcMSm"
     >
       <div
+        class="ant-steps ant-steps-horizontal LoginContainer__CustomStep-sk1ioa-2 eQRowm ant-steps-label-horizontal"
+      >
+        <div
+          class="ant-steps-item ant-steps-item-process ant-steps-item-active"
+        >
+          <div
+            class="ant-steps-item-container"
+          >
+            <div
+              class="ant-steps-item-tail"
+            />
+            <div
+              class="ant-steps-item-icon"
+            >
+              <span
+                class="ant-steps-icon"
+              >
+                1
+              </span>
+            </div>
+            <div
+              class="ant-steps-item-content"
+            >
+              <div
+                class="ant-steps-item-title"
+              >
+                Finished
+              </div>
+              <div
+                class="ant-steps-item-description"
+              >
+                This is a description.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-steps-item ant-steps-item-wait"
+        >
+          <div
+            class="ant-steps-item-container"
+          >
+            <div
+              class="ant-steps-item-tail"
+            />
+            <div
+              class="ant-steps-item-icon"
+            >
+              <span
+                class="ant-steps-icon"
+              >
+                2
+              </span>
+            </div>
+            <div
+              class="ant-steps-item-content"
+            >
+              <div
+                class="ant-steps-item-title"
+              >
+                In Progress
+              </div>
+              <div
+                class="ant-steps-item-description"
+              >
+                This is a description.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-steps-item ant-steps-item-wait"
+        >
+          <div
+            class="ant-steps-item-container"
+          >
+            <div
+              class="ant-steps-item-tail"
+            />
+            <div
+              class="ant-steps-item-icon"
+            >
+              <span
+                class="ant-steps-icon"
+              >
+                3
+              </span>
+            </div>
+            <div
+              class="ant-steps-item-content"
+            >
+              <div
+                class="ant-steps-item-title"
+              >
+                Waiting
+              </div>
+              <div
+                class="ant-steps-item-description"
+              >
+                This is a description.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
         class="LoginContainer__FormContainer-sk1ioa-1 eYjOur"
       >
         <form
           autocomplete="off"
-          class="ant-form ant-form-horizontal"
+          class="ant-form ant-form-vertical"
           data-testid="loginForm"
           id="basic"
         >
@@ -21,7 +127,7 @@ exports[`<LoginContainer tests should render and match the snapshot 1`] = `
             orientation="column"
           >
             <div
-              class="ant-row ant-form-item"
+              class="ant-row ant-form-item FormInput__CustomFormItem-ofxmhy-1 cElTSv"
             >
               <div
                 class="ant-col ant-form-item-label"
@@ -55,7 +161,7 @@ exports[`<LoginContainer tests should render and match the snapshot 1`] = `
               </div>
             </div>
             <div
-              class="ant-row ant-form-item"
+              class="ant-row ant-form-item FormInput__CustomFormItem-ofxmhy-1 cElTSv"
             >
               <div
                 class="ant-col ant-form-item-label"
@@ -89,7 +195,7 @@ exports[`<LoginContainer tests should render and match the snapshot 1`] = `
               </div>
             </div>
             <div
-              class="ant-row ant-form-item"
+              class="ant-row ant-form-item FormInput__CustomFormItem-ofxmhy-1 cElTSv"
             >
               <div
                 class="ant-col ant-form-item-label"

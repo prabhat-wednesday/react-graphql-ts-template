@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Button, Form } from 'antd';
+import { Button, Form, Steps } from 'antd';
 
 import { requestGetUserData } from './reducer';
 import { AnyAction, compose } from '@reduxjs/toolkit';
@@ -24,6 +24,9 @@ const FormContainer = styled.div`
   border: 1px black solid;
 `;
 
+const CustomStep = styled(Steps)`
+  padding: 0 10rem;
+`;
 export interface LoginContainerProps {
   dispatchUserData: (payload: any) => AnyAction;
 }
@@ -35,21 +38,39 @@ const FormInputArray = [
 ];
 
 const LoginContainer = ({ dispatchUserData }: LoginContainerProps) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [form] = Form.useForm();
   const onFinish = (values: any) => {
     dispatchUserData(values);
     form.resetFields();
   };
+  const description = 'This is a description.';
+
+  const list = ['username', 'emailId', 'password'];
+  const { Step } = Steps;
+
+  const handleChange = (value: any) => {
+    const step = list.indexOf(Object.keys(value)[0]);
+    console.log(step);
+    setCurrentIndex(step);
+  };
   return (
     <Container>
+      <CustomStep current={currentIndex}>
+        <Step title="Finished" description={description} />
+        <Step title="In Progress" description={description} />
+        <Step title="Waiting" description={description} />
+      </CustomStep>
       <FormContainer>
         <Form
+          layout="vertical"
           data-testid="loginForm"
           form={form}
           name="basic"
           initialValues={{ remember: true }}
           onFinish={onFinish}
           autoComplete="off"
+          onValuesChange={handleChange}
         >
           <For orientation={'column'} of={FormInputArray} renderItem={(item) => <FormInput {...item} />} />
 

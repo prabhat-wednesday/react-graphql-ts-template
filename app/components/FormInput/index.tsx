@@ -7,6 +7,14 @@ const StyledInput = styled(Input)`
   width: 100%;
 `;
 
+const CustomFormItem = styled(Form.Item)`
+  display: flex;
+  justify-content: space-between;
+
+  &&&.ant-form-horizontal .ant-form-item-label {
+    margin-right: 10px;
+  }
+`;
 interface FormInputProps {
   label: string;
   name: string;
@@ -16,9 +24,9 @@ interface FormInputProps {
 }
 const FormInput = ({ label, name, message, required, onChange }: FormInputProps) => {
   return (
-    <Form.Item label={translate(label)} name={translate(name)} rules={[{ required, message: translate(message) }]}>
+    <CustomFormItem label={translate(label)} name={translate(name)} rules={[{ required, message: translate(message) }]}>
       <StyledInput onChange={onChange} data-testid="formInput" />
-    </Form.Item>
+    </CustomFormItem>
   );
 };
 
