@@ -9,13 +9,16 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import { compose } from 'redux';
+import { connect } from 'react-redux';
 import map from 'lodash-es/map';
 import { ThemeProvider } from 'styled-components';
 import { colors } from '@app/themes';
 import { HEADER_HEIGHT, MIN_SIDEBAR_WIDTH } from '@app/utils/constants';
-import { For } from '@app/components';
+import { For, ProtectedRoute } from '@app/components';
 import { routeConfig } from '@app/routeConfig';
-import { Route, Switch } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
+import { createStructuredSelector } from 'reselect';
+import { selectIsUserLoggedIn, selectUserData } from '../LoginContainer/selector';
 const theme = {
   fg: colors.primary,
   bg: colors.secondaryText,
@@ -23,7 +26,7 @@ const theme = {
   sidebarWidth: MIN_SIDEBAR_WIDTH
 };
 
-export function App() {
+export function App({ isLoggedIn }: any) {
   return (
     <ThemeProvider theme={theme}>
       <For
@@ -32,7 +35,8 @@ export function App() {
         renderItem={(routeKey, index) => {
           const Component = routeConfig[routeKey].component;
           return (
-            <Route
+            <ProtectedRoute
+              isLoggedIn={isLoggedIn}
               exact={routeConfig[routeKey].exact}
               key={index}
               path={routeConfig[routeKey].route}
@@ -51,4 +55,11 @@ export function App() {
   );
 }
 
-export default compose(withRouter)(App);
+const mapStateToProps = createStructuredSelector({
+  userData: selectUserData(),
+  isLoggedIn: selectIsUserLoggedIn()
+});
+
+const withConnect = connect(mapStateToProps);
+export default compose(withConnect, withRouter)(App);
+export const AppTest = App;

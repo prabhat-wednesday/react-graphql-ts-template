@@ -7,6 +7,9 @@ exports[`<ItuneContainer /> test should render and match the snapshot 1`] = `
       <div
         class="ItunesContainer__InputContainer-sc-1mn0u29-0 cWHxEw"
       >
+        <button>
+          Logout
+        </button>
         <p
           class="T__StyledText-gcrjip-0 gIxZML"
           data-testid="search-label"
@@ -20,6 +23,422 @@ exports[`<ItuneContainer /> test should render and match the snapshot 1`] = `
           type="text"
           value=""
         />
+      </div>
+      <div
+        class="ant-carousel"
+      >
+        <div
+          class="slick-slider CarouselContainer__StyledCarousel-sc-1h1kak5-0 jsOkAS slick-initialized"
+          dir="ltr"
+        >
+          <div
+            class="slick-list"
+          >
+            <div
+              class="slick-track"
+              style="opacity: 1; transform: translate3d(0px, 0px, 0px);"
+            >
+              <div
+                aria-hidden="true"
+                class="slick-slide slick-cloned"
+                data-index="-1"
+                style="width: 0px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="ant-card ant-card-bordered"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="ant-card-cover"
+                    >
+                      <img
+                        src="https://is4-ssl.mzstatic.com/image/thumb/Music124/v4/96/03/16/9603161a-3c62-a1bc-fa25-40427489eb23/8902894358361_cover.jpg/400x1000bb.jpg"
+                        style="height: 100%;"
+                      />
+                    </div>
+                    <div
+                      class="ant-card-body"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="false"
+                class="slick-slide slick-active slick-current"
+                data-index="0"
+                style="outline: none; width: 0px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="ant-card ant-card-bordered"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="ant-card-cover"
+                    >
+                      <img
+                        src="https://is2-ssl.mzstatic.com/image/thumb/Music125/v4/70/da/21/70da2118-5671-c0e8-888a-39a4d652b79f/886446258263.jpg/400x1000bb.jpg"
+                        style="height: 100%;"
+                      />
+                    </div>
+                    <div
+                      class="ant-card-body"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide"
+                data-index="1"
+                style="outline: none; width: 0px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="ant-card ant-card-bordered"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="ant-card-cover"
+                    >
+                      <img
+                        src="https://is5-ssl.mzstatic.com/image/thumb/Music124/v4/78/48/4e/78484e74-5f55-aace-829b-b3b17540f906/8903431648433_cover.jpg/400x1000bb.jpg"
+                        style="height: 100%;"
+                      />
+                    </div>
+                    <div
+                      class="ant-card-body"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide"
+                data-index="2"
+                style="outline: none; width: 0px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="ant-card ant-card-bordered"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="ant-card-cover"
+                    >
+                      <img
+                        src="https://is4-ssl.mzstatic.com/image/thumb/Music49/v4/92/5b/ed/925bed07-724b-06e3-dc21-7df19ea142b1/8902894357302_cover.jpg/400x1000bb.jpg"
+                        style="height: 100%;"
+                      />
+                    </div>
+                    <div
+                      class="ant-card-body"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide"
+                data-index="3"
+                style="outline: none; width: 0px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="ant-card ant-card-bordered"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="ant-card-cover"
+                    >
+                      <img
+                        src="https://is2-ssl.mzstatic.com/image/thumb/Music115/v4/33/2f/1e/332f1e03-4cc1-85b7-c23d-1de5802b9b94/8902894358057_cover.jpg/400x1000bb.jpg"
+                        style="height: 100%;"
+                      />
+                    </div>
+                    <div
+                      class="ant-card-body"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide"
+                data-index="4"
+                style="outline: none; width: 0px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="ant-card ant-card-bordered"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="ant-card-cover"
+                    >
+                      <img
+                        src="https://is2-ssl.mzstatic.com/image/thumb/Music124/v4/fe/1d/e4/fe1de42c-cc56-cd1d-fd40-339bbfa8f0f3/8902894357647_cover.jpg/400x1000bb.jpg"
+                        style="height: 100%;"
+                      />
+                    </div>
+                    <div
+                      class="ant-card-body"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide"
+                data-index="5"
+                style="outline: none; width: 0px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="ant-card ant-card-bordered"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="ant-card-cover"
+                    >
+                      <img
+                        src="https://is4-ssl.mzstatic.com/image/thumb/Music124/v4/96/03/16/9603161a-3c62-a1bc-fa25-40427489eb23/8902894358361_cover.jpg/400x1000bb.jpg"
+                        style="height: 100%;"
+                      />
+                    </div>
+                    <div
+                      class="ant-card-body"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide slick-cloned"
+                data-index="6"
+                style="width: 0px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="ant-card ant-card-bordered"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="ant-card-cover"
+                    >
+                      <img
+                        src="https://is2-ssl.mzstatic.com/image/thumb/Music125/v4/70/da/21/70da2118-5671-c0e8-888a-39a4d652b79f/886446258263.jpg/400x1000bb.jpg"
+                        style="height: 100%;"
+                      />
+                    </div>
+                    <div
+                      class="ant-card-body"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide slick-cloned"
+                data-index="7"
+                style="width: 0px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="ant-card ant-card-bordered"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="ant-card-cover"
+                    >
+                      <img
+                        src="https://is5-ssl.mzstatic.com/image/thumb/Music124/v4/78/48/4e/78484e74-5f55-aace-829b-b3b17540f906/8903431648433_cover.jpg/400x1000bb.jpg"
+                        style="height: 100%;"
+                      />
+                    </div>
+                    <div
+                      class="ant-card-body"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide slick-cloned"
+                data-index="8"
+                style="width: 0px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="ant-card ant-card-bordered"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="ant-card-cover"
+                    >
+                      <img
+                        src="https://is4-ssl.mzstatic.com/image/thumb/Music49/v4/92/5b/ed/925bed07-724b-06e3-dc21-7df19ea142b1/8902894357302_cover.jpg/400x1000bb.jpg"
+                        style="height: 100%;"
+                      />
+                    </div>
+                    <div
+                      class="ant-card-body"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide slick-cloned"
+                data-index="9"
+                style="width: 0px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="ant-card ant-card-bordered"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="ant-card-cover"
+                    >
+                      <img
+                        src="https://is2-ssl.mzstatic.com/image/thumb/Music115/v4/33/2f/1e/332f1e03-4cc1-85b7-c23d-1de5802b9b94/8902894358057_cover.jpg/400x1000bb.jpg"
+                        style="height: 100%;"
+                      />
+                    </div>
+                    <div
+                      class="ant-card-body"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide slick-cloned"
+                data-index="10"
+                style="width: 0px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="ant-card ant-card-bordered"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="ant-card-cover"
+                    >
+                      <img
+                        src="https://is2-ssl.mzstatic.com/image/thumb/Music124/v4/fe/1d/e4/fe1de42c-cc56-cd1d-fd40-339bbfa8f0f3/8902894357647_cover.jpg/400x1000bb.jpg"
+                        style="height: 100%;"
+                      />
+                    </div>
+                    <div
+                      class="ant-card-body"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide slick-cloned"
+                data-index="11"
+                style="width: 0px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="ant-card ant-card-bordered"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="ant-card-cover"
+                    >
+                      <img
+                        src="https://is4-ssl.mzstatic.com/image/thumb/Music124/v4/96/03/16/9603161a-3c62-a1bc-fa25-40427489eb23/8902894358361_cover.jpg/400x1000bb.jpg"
+                        style="height: 100%;"
+                      />
+                    </div>
+                    <div
+                      class="ant-card-body"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ul
+            class="slick-dots slick-dots-bottom"
+            style="display: block;"
+          >
+            <li
+              class="slick-active"
+            >
+              <button>
+                1
+              </button>
+            </li>
+            <li
+              class=""
+            >
+              <button>
+                2
+              </button>
+            </li>
+            <li
+              class=""
+            >
+              <button>
+                3
+              </button>
+            </li>
+            <li
+              class=""
+            >
+              <button>
+                4
+              </button>
+            </li>
+            <li
+              class=""
+            >
+              <button>
+                5
+              </button>
+            </li>
+            <li
+              class=""
+            >
+              <button>
+                6
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
       <div
         class="ant-skeleton ant-skeleton-active"

@@ -28,4 +28,5 @@ export interface ItuneContainerProps {
   };
   loading: boolean;
   songListError?: string;
+  dispatchLogoutUser: () => AnyAction;
 }

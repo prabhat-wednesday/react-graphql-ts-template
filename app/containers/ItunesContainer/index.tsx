@@ -16,6 +16,9 @@ import { If, T } from '@app/components';
 import { useHistory } from 'react-router-dom';
 import { setQueryParam } from '@app/utils';
 import { isEmpty } from 'lodash-es';
+import db from '../../db.json';
+import CarouselContainer from '../CarouselContainer';
+import { logoutUser } from '../LoginContainer/reducer';
 
 const InputContainer = styled.div`
   && {
@@ -42,7 +45,7 @@ const CustomPagination = styled(Pagination)`
   justify-content: center;
 `;
 
-const ItunesContainer = ({ dispatchSongList, songData, loading }: ItuneContainerProps) => {
+const ItunesContainer = ({ dispatchSongList, songData, loading, dispatchLogoutUser }: ItuneContainerProps) => {
   const { results } = songData;
   const [paginationParams, setPaginationParams] = useState({ pageNumber: 1, pageSize: 10 });
   const history = useHistory();
@@ -75,7 +78,8 @@ const ItunesContainer = ({ dispatchSongList, songData, loading }: ItuneContainer
   return (
     <div>
       <InputContainer>
-        <T data-testid="search-label" id="song_search_default" />
+        <button onClick={dispatchLogoutUser}>Logout</button>
+        <T data-testid="search-label" id="song_search_heading" />
         <CustomInput
           data-testid="search-bar"
           aria-label="input-element"
@@ -83,6 +87,7 @@ const ItunesContainer = ({ dispatchSongList, songData, loading }: ItuneContainer
           type="text"
         />
       </InputContainer>
+      <CarouselContainer db={db} />
       <ItuneSongList loading={loading} songData={songData} />
       <If condition={!isEmpty(results)}>
         <CustomPagination onChange={handlePaginationOnChange} defaultCurrent={1} total={50} />
@@ -98,7 +103,8 @@ const mapStateToProps = createStructuredSelector({
 
 export function mapDispatchToProps(dispatch: (arg0: AnyAction) => any) {
   return {
-    dispatchSongList: (payload: RequestSongListActionPayload) => dispatch(requestGetSongList(payload))
+    dispatchSongList: (payload: RequestSongListActionPayload) => dispatch(requestGetSongList(payload)),
+    dispatchLogoutUser: () => dispatch(logoutUser())
   };
 }
 

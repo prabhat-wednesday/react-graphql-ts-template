@@ -38,7 +38,7 @@ const ProtectedRoute = ({ render: Component, isLoggedIn, handleLogout = () => {}
     } else {
       // user is logged in
       if (isUnprotectedRoute) {
-        to = routeConstants.dashboard.route;
+        to = routeConstants.itune.route;
       } else {
         // logged in and accessing a protected route
         return <Component {...renderProps} />;

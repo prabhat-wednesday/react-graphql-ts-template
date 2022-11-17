@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LoginContainer tests should render and match the snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="LoginContainer__Container-sk1ioa-0 jvcMSm"
+    >
+      <div
+        class="LoginContainer__FormContainer-sk1ioa-1 eYjOur"
+      >
+        <form
+          autocomplete="off"
+          class="ant-form ant-form-horizontal"
+          data-testid="loginForm"
+          id="basic"
+        >
+          <div
+            class="For__FlexContainer-sc-26ssez-0 cXKcda"
+            data-testid="for"
+            orientation="column"
+          >
+            <div
+              class="ant-row ant-form-item"
+            >
+              <div
+                class="ant-col ant-form-item-label"
+              >
+                <label
+                  class="ant-form-item-required"
+                  for="basic_username"
+                  title="Username"
+                >
+                  Username
+                </label>
+              </div>
+              <div
+                class="ant-col ant-form-item-control"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <input
+                      class="ant-input FormInput__StyledInput-ofxmhy-0 iWohJH"
+                      data-testid="formInput"
+                      id="basic_username"
+                      type="text"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-row ant-form-item"
+            >
+              <div
+                class="ant-col ant-form-item-label"
+              >
+                <label
+                  class="ant-form-item-required"
+                  for="basic_emailId"
+                  title="EmailId"
+                >
+                  EmailId
+                </label>
+              </div>
+              <div
+                class="ant-col ant-form-item-control"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <input
+                      class="ant-input FormInput__StyledInput-ofxmhy-0 iWohJH"
+                      data-testid="formInput"
+                      id="basic_emailId"
+                      type="text"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-row ant-form-item"
+            >
+              <div
+                class="ant-col ant-form-item-label"
+              >
+                <label
+                  class="ant-form-item-required"
+                  for="basic_password"
+                  title="Password"
+                >
+                  Password
+                </label>
+              </div>
+              <div
+                class="ant-col ant-form-item-control"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <input
+                      class="ant-input FormInput__StyledInput-ofxmhy-0 iWohJH"
+                      data-testid="formInput"
+                      id="basic_password"
+                      type="text"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-row ant-form-item"
+          >
+            <div
+              class="ant-col ant-form-item-control"
+            >
+              <div
+                class="ant-form-item-control-input"
+              >
+                <div
+                  class="ant-form-item-control-input-content"
+                >
+                  <button
+                    class="ant-btn ant-btn-primary"
+                    data-testid="submitButton"
+                    type="submit"
+                  >
+                    <span>
+                      Submit
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+`;

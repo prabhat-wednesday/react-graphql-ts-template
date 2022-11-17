@@ -9,7 +9,6 @@ export function* fetchDataFromItune(action: any): Generator<any, any> {
   if (ok) {
     yield put(successGetSongList(data));
   } else {
-    console.log(error);
     yield put(failureGetSongList(error));
   }
 }
