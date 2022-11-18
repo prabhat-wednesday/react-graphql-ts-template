@@ -19,15 +19,13 @@ const CustomFormItem = styled(Form.Item)`
 interface FormInputProps extends FormItemProps {
   label: string;
   name: string;
-  trigger?: string;
   rules?: Rule[];
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
-const FormInput = ({ label, trigger, name, rules, onChange }: FormInputProps) => {
-  console.log('lBL', label);
+const FormInput = ({ label, name, onChange, ...props }: FormInputProps) => {
   return (
     <div>
-      <CustomFormItem trigger={trigger} label={translate(label)} name={translate(name)} rules={rules}>
+      <CustomFormItem {...props} label={translate(label)} name={translate(name)}>
         <StyledInput autoFocus onChange={onChange} data-testid="formInput" />
       </CustomFormItem>
     </div>

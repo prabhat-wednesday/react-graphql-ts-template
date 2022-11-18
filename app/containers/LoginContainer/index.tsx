@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, MutableRefObject } from 'react';
 import { AnyAction, compose } from '@reduxjs/toolkit';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
@@ -8,7 +8,6 @@ import StepsComponent from '@app/components/StepsComponent';
 import { requestGetUserData } from './reducer';
 import { If } from '@app/components';
 import { FormInstance } from 'antd';
-import { T } from '@app/components/T';
 import { getStepperLoginFormInputConstants } from './constants';
 import { Button } from '@app/components/Button';
 
@@ -47,8 +46,7 @@ const LoginContainer = ({ dispatchUserData }: LoginContainerProps) => {
     dispatchUserData(values);
   };
   const handleFormChange = (f: FormInstance<any>) => {
-    // @ts-ignore
-    form.current = f;
+    (form as MutableRefObject<FormInstance>).current = f;
   };
   return (
     <Container>

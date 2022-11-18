@@ -1,6 +1,7 @@
 import { translate } from '@app/components/IntlGlobalProvider';
+import { StepperLoginFormInputInterface } from '@app/interfaces/common';
 
-export const getStepperLoginFormInputConstants = () => [
+export const getStepperLoginFormInputConstants = (): StepperLoginFormInputInterface[] => [
   {
     label: 'label_username',
     name: 'username',
@@ -9,7 +10,6 @@ export const getStepperLoginFormInputConstants = () => [
   {
     label: 'label_emailId',
     name: 'emailId',
-
     rules: [
       { message: translate('msg_for_emailid'), required: true },
       { validateTrigger: 'onSubmit', type: 'email' }

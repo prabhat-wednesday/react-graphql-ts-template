@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { Button, Form, FormInstance } from 'antd';
+import React, { useEffect } from 'react';
+import { Form, FormInstance } from 'antd';
 import styled from 'styled-components';
 import FormInput from '../FormInput';
-import If from '../If';
-import { isEmpty } from 'lodash-es';
-import { Rule } from 'antd/lib/form';
+import { StepperLoginFormInputInterface } from '@app/interfaces/common';
 
 const FormContainer = styled.div`
   width: 50%;
@@ -14,7 +12,7 @@ const FormContainer = styled.div`
 `;
 
 interface DynamicStepFormProps {
-  formInput: { label: string; name: string; rules: Rule[] };
+  formInput: StepperLoginFormInputInterface;
   handleNext: () => void;
   handleFormChange: (value: FormInstance<any>) => void;
   handlePrev: () => void;
@@ -22,8 +20,6 @@ interface DynamicStepFormProps {
 }
 
 const DynamicStepForm = ({ formInput, handleSubmit, handleFormChange }: DynamicStepFormProps) => {
-  console.log(formInput, 'in Dynamic form');
-  const [isDisabled, setIsDisabled] = useState(true);
   const [form] = Form.useForm();
 
   useEffect(() => {
@@ -35,14 +31,7 @@ const DynamicStepForm = ({ formInput, handleSubmit, handleFormChange }: DynamicS
     form.resetFields();
   };
 
-  const handleChange = (value: any) => {
-    setIsDisabled(isEmpty(value[formInput.name]));
-  };
-
-  useEffect(() => {
-    setIsDisabled(true);
-  }, [formInput.name]);
-  console.log(formInput);
+  useEffect(() => {}, [formInput.name]);
   return (
     <>
       <FormContainer>
@@ -53,7 +42,6 @@ const DynamicStepForm = ({ formInput, handleSubmit, handleFormChange }: DynamicS
           name="basic"
           initialValues={{ remember: true }}
           onFinish={onFinish}
-          onValuesChange={handleChange}
           autoComplete="off"
         >
           <FormInput {...formInput} />
