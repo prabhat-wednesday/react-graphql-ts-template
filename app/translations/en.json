@@ -21,5 +21,8 @@
   "password": "password",
   "msg_for_username": "Please input your username!",
   "msg_for_emailid": "Please input your emailid!",
-  "msg_for_password": "Please input your password!"
+  "msg_for_password": "Please input your password!",
+  "prev": "Prev",
+  "submit": "Submit",
+  "next": "Next"
 }

@@ -35,26 +35,20 @@ describe('<LoginContainer tests', () => {
 
   it('should render on the screen', () => {
     const { getByTestId } = renderProvider(<LoginContainer {...defaultProps} />);
-    const LoginForm = getByTestId('loginForm');
+    const LoginForm = getByTestId('login-form');
     expect(LoginForm).toBeInTheDocument();
   });
 
   it('should check if form get submit after clicking on submit button', async () => {
     const submitSpy = jest.fn();
-    const { getByTestId, getAllByTestId } = renderProvider(<LoginContainer dispatchUserData={submitSpy} />);
+    const { getByTestId } = renderProvider(<LoginContainer dispatchUserData={submitSpy} />);
     const onFinishSpy = jest.fn();
-    const LoginForm = getByTestId('loginForm');
-    const LoginInputs = getAllByTestId('formInput') as HTMLInputElement[];
+    const LoginForm = getByTestId('login-form');
+    const LoginInputs = getByTestId('formInput');
     LoginForm.onsubmit = onFinishSpy;
 
-    fireEvent.change(LoginInputs[0], {
+    fireEvent.change(LoginInputs, {
       target: { value: 'Prabhat Singh' }
-    });
-    fireEvent.change(LoginInputs[1], {
-      target: { value: 'singhprabhat@gmail.com' }
-    });
-    fireEvent.change(LoginInputs[2], {
-      target: { value: 'qwerty1234' }
     });
     fireEvent.submit(LoginForm);
     await timeout(500);
@@ -64,28 +58,38 @@ describe('<LoginContainer tests', () => {
 
   it('should check if error msg get print on the screen when input field is empty ', async () => {
     const submitSpy = jest.fn();
-    const { getByTestId, getAllByTestId, getByText } = renderWithIntl(<LoginContainer dispatchUserData={submitSpy} />);
+    const { getByTestId, getByText } = renderWithIntl(<LoginContainer dispatchUserData={submitSpy} />);
     const onFinishSpy = jest.fn();
-    const LoginForm = getByTestId('loginForm');
-    const LoginInputs = getAllByTestId('formInput') as HTMLInputElement[];
+    const LoginForm = getByTestId('login-form');
+    const LoginInputs = getByTestId('formInput');
     LoginForm.onsubmit = onFinishSpy;
 
-    fireEvent.change(LoginInputs[0], {
-      target: { value: '' }
-    });
-    fireEvent.change(LoginInputs[1], {
-      target: { value: '' }
-    });
-    fireEvent.change(LoginInputs[2], {
+    fireEvent.change(LoginInputs, {
       target: { value: '' }
     });
     fireEvent.submit(LoginForm);
     await timeout(500);
     const ErrorMsg1 = getByText(translate('msg_for_username'));
-    const ErrorMsg2 = getByText(translate('msg_for_emailid'));
-    const ErrorMsg3 = getByText(translate('msg_for_password'));
     expect(ErrorMsg1).toBeInTheDocument();
-    expect(ErrorMsg2).toBeInTheDocument();
-    expect(ErrorMsg3).toBeInTheDocument();
+  });
+
+  it('should check next button get load on the screen currentIndex is zero', () => {
+    const { getByRole } = renderWithIntl(<LoginContainer dispatchUserData={submitSpy} />);
+    const NextButton = getByRole('button', { name: /Next/i });
+    expect(NextButton).toBeInTheDocument();
+  });
+
+  it('should check prev button and next button get load on the screen when currentIndex is one', async () => {
+    const { getByRole, getByTestId } = renderWithIntl(<LoginContainer dispatchUserData={submitSpy} />);
+    const loginForm = getByTestId('formInput');
+    fireEvent.change(loginForm, {
+      target: { value: 'Prabhat' }
+    });
+    const nextButton = getByRole('button', { name: /Next/i });
+    fireEvent.click(nextButton);
+    await timeout(500);
+    const prevButton = getByRole('button', { name: /Prev/i });
+    expect(nextButton).toBeInTheDocument();
+    expect(prevButton).toBeInTheDocument();
   });
 });

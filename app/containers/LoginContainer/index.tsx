@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { Button, Form, Steps } from 'antd';
-
-import { requestGetUserData } from './reducer';
+import React, { useState, useRef } from 'react';
 import { AnyAction, compose } from '@reduxjs/toolkit';
+import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { For } from '@app/components';
-import FormInput from '@app/components/FormInput';
+
+import DynamicStepForm from '@app/components/DynamicForm';
+import StepsComponent from '@app/components/StepsComponent';
+import { requestGetUserData } from './reducer';
+import { If } from '@app/components';
+import { FormInstance } from 'antd';
+import { T } from '@app/components/T';
+import { getStepperLoginFormInputConstants } from './constants';
+import { Button } from '@app/components/Button';
 
 const Container = styled.div`
   width: 100%;
@@ -17,70 +21,56 @@ const Container = styled.div`
   padding-top: 3rem;
 `;
 
-const FormContainer = styled.div`
-  width: 50%;
-  margin: 5rem auto;
-  padding: 1rem;
-  border: 1px black solid;
-`;
-
-const CustomStep = styled(Steps)`
-  padding: 0 10rem;
-`;
 export interface LoginContainerProps {
   dispatchUserData: (payload: any) => AnyAction;
 }
 
-const FormInputArray = [
-  { label: 'label_username', name: 'username', message: 'msg_for_username', required: true },
-  { label: 'label_emailId', name: 'emailId', message: 'msg_for_emailid', required: true },
-  { label: 'label_password', name: 'password', message: 'msg_for_password', required: true }
-];
+const StepsMsg = [{ title: 'Username' }, { title: 'Emailid' }, { title: 'Password' }];
 
 const LoginContainer = ({ dispatchUserData }: LoginContainerProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [form] = Form.useForm();
-  const onFinish = (values: any) => {
-    dispatchUserData(values);
-    form.resetFields();
+  const form = useRef<FormInstance<any>>(null);
+  const handleNext = () => {
+    form.current
+      ?.validateFields()
+      .then(() => {
+        setCurrentIndex((next) => next + 1);
+      })
+      .catch();
   };
-  const description = 'This is a description.';
 
-  const list = ['username', 'emailId', 'password'];
-  const { Step } = Steps;
+  const handlePrev = () => {
+    setCurrentIndex((prev) => prev - 1);
+  };
 
-  const handleChange = (value: any) => {
-    const step = list.indexOf(Object.keys(value)[0]);
-    console.log(step);
-    setCurrentIndex(step);
+  const handleSubmit = (values: any) => {
+    dispatchUserData(values);
+  };
+  const handleFormChange = (f: FormInstance<any>) => {
+    // @ts-ignore
+    form.current = f;
   };
   return (
     <Container>
-      <CustomStep current={currentIndex}>
-        <Step title="Finished" description={description} />
-        <Step title="In Progress" description={description} />
-        <Step title="Waiting" description={description} />
-      </CustomStep>
-      <FormContainer>
-        <Form
-          layout="vertical"
-          data-testid="loginForm"
-          form={form}
-          name="basic"
-          initialValues={{ remember: true }}
-          onFinish={onFinish}
-          autoComplete="off"
-          onValuesChange={handleChange}
+      <StepsComponent currentIndex={currentIndex} stepsMsg={StepsMsg} />
+      <DynamicStepForm
+        handleFormChange={handleFormChange}
+        formInput={getStepperLoginFormInputConstants()[currentIndex]}
+        handleNext={handleNext}
+        handlePrev={handlePrev}
+        handleSubmit={handleSubmit}
+      />
+      <div style={{ display: 'flex' }}>
+        <If condition={currentIndex}>
+          <Button messageId="prev" onClick={handlePrev} type="primary" />
+        </If>
+        <If
+          condition={currentIndex < 2}
+          otherwise={<Button messageId="submit" data-testid="submitButton" type="primary" htmlType="submit" />}
         >
-          <For orientation={'column'} of={FormInputArray} renderItem={(item) => <FormInput {...item} />} />
-
-          <Form.Item>
-            <Button data-testid="submitButton" type="primary" htmlType="submit">
-              Submit
-            </Button>
-          </Form.Item>
-        </Form>
-      </FormContainer>
+          <Button messageId="next" onClick={handleNext} type="primary" />
+        </If>
+      </div>
     </Container>
   );
 };

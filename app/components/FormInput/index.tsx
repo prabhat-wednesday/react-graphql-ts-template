@@ -1,7 +1,8 @@
 import React from 'react';
-import { Form, Input } from 'antd';
+import { Form, FormItemProps, Input } from 'antd';
 import styled from 'styled-components';
 import { translate } from '../IntlGlobalProvider';
+import { Rule } from 'antd/lib/form';
 
 const StyledInput = styled(Input)`
   width: 100%;
@@ -15,18 +16,21 @@ const CustomFormItem = styled(Form.Item)`
     margin-right: 10px;
   }
 `;
-interface FormInputProps {
+interface FormInputProps extends FormItemProps {
   label: string;
   name: string;
-  message: string;
-  required: boolean;
+  trigger?: string;
+  rules?: Rule[];
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
-const FormInput = ({ label, name, message, required, onChange }: FormInputProps) => {
+const FormInput = ({ label, trigger, name, rules, onChange }: FormInputProps) => {
+  console.log('lBL', label);
   return (
-    <CustomFormItem label={translate(label)} name={translate(name)} rules={[{ required, message: translate(message) }]}>
-      <StyledInput onChange={onChange} data-testid="formInput" />
-    </CustomFormItem>
+    <div>
+      <CustomFormItem trigger={trigger} label={translate(label)} name={translate(name)} rules={rules}>
+        <StyledInput autoFocus onChange={onChange} data-testid="formInput" />
+      </CustomFormItem>
+    </div>
   );
 };
 
