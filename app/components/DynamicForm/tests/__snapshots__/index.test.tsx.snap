@@ -4,13 +4,13 @@ exports[`<DynamicStepForm/> test should render and match the snapshot 1`] = `
 <body>
   <div>
     <div
-      class="DynamicForm__FormContainer-sc-1ttvbzz-0 VZLZL"
+      class="DynamicForm__FormContainer-sc-1ttvbzz-0 gXTkoJ"
     >
       <form
         autocomplete="off"
-        class="ant-form ant-form-vertical"
+        class="ant-form ant-form-vertical DynamicForm__Form-sc-1ttvbzz-1 hUxbIT"
         data-testid="login-form"
-        id="basic"
+        id="my-form"
       >
         <div>
           <div
@@ -21,7 +21,7 @@ exports[`<DynamicStepForm/> test should render and match the snapshot 1`] = `
             >
               <label
                 class="ant-form-item-required"
-                for="basic_username"
+                for="basic_Username"
                 title="Username"
               >
                 Username
@@ -39,7 +39,7 @@ exports[`<DynamicStepForm/> test should render and match the snapshot 1`] = `
                   <input
                     class="ant-input FormInput__StyledInput-ofxmhy-0 iWohJH"
                     data-testid="formInput"
-                    id="basic_username"
+                    id="basic_Username"
                     type="text"
                     value=""
                   />

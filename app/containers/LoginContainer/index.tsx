@@ -10,6 +10,7 @@ import { If } from '@app/components';
 import { FormInstance } from 'antd';
 import { getStepperLoginFormInputConstants } from './constants';
 import { Button } from '@app/components/Button';
+import { translate } from '@app/components/IntlGlobalProvider';
 
 const Container = styled.div`
   width: 100%;
@@ -20,11 +21,20 @@ const Container = styled.div`
   padding-top: 3rem;
 `;
 
+const CustomFormContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 export interface LoginContainerProps {
   dispatchUserData: (payload: any) => AnyAction;
 }
 
-const StepsMsg = [{ title: 'Username' }, { title: 'Emailid' }, { title: 'Password' }];
+const getStepMessages = () => [
+  { title: translate('username') },
+  { title: translate('email') },
+  { title: translate('password') }
+];
 
 const LoginContainer = ({ dispatchUserData }: LoginContainerProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -50,25 +60,27 @@ const LoginContainer = ({ dispatchUserData }: LoginContainerProps) => {
   };
   return (
     <Container>
-      <StepsComponent currentIndex={currentIndex} stepsMsg={StepsMsg} />
-      <DynamicStepForm
-        handleFormChange={handleFormChange}
-        formInput={getStepperLoginFormInputConstants()[currentIndex]}
-        handleNext={handleNext}
-        handlePrev={handlePrev}
-        handleSubmit={handleSubmit}
-      />
-      <div style={{ display: 'flex' }}>
-        <If condition={currentIndex}>
-          <Button messageId="prev" onClick={handlePrev} type="primary" />
-        </If>
-        <If
-          condition={currentIndex < 2}
-          otherwise={<Button messageId="submit" data-testid="submitButton" type="primary" htmlType="submit" />}
-        >
-          <Button messageId="next" onClick={handleNext} type="primary" />
-        </If>
-      </div>
+      <StepsComponent currentIndex={currentIndex} stepsMsg={getStepMessages()} />
+      <CustomFormContainer>
+        <DynamicStepForm
+          handleFormChange={handleFormChange}
+          formInput={getStepperLoginFormInputConstants()[currentIndex]}
+          handleSubmit={handleSubmit}
+        />
+        <div style={{ display: 'flex' }}>
+          <If condition={currentIndex}>
+            <Button messageId="prev" onClick={handlePrev} type="primary" />
+          </If>
+          <If
+            condition={currentIndex < 2}
+            otherwise={
+              <Button messageId="submit" form="my-form" data-testid="submitButton" type="primary" htmlType="submit" />
+            }
+          >
+            <Button messageId="next" onClick={handleNext} type="primary" />
+          </If>
+        </div>
+      </CustomFormContainer>
     </Container>
   );
 };

@@ -62,7 +62,7 @@ exports[`<LoginContainer tests should render and match the snapshot 1`] = `
               <div
                 class="ant-steps-item-title"
               >
-                Emailid
+                Email Address
               </div>
             </div>
           </div>
@@ -98,67 +98,71 @@ exports[`<LoginContainer tests should render and match the snapshot 1`] = `
         </div>
       </div>
       <div
-        class="DynamicForm__FormContainer-sc-1ttvbzz-0 VZLZL"
+        class="LoginContainer__CustomFormContainer-sk1ioa-1 lohJtR"
       >
-        <form
-          autocomplete="off"
-          class="ant-form ant-form-vertical"
-          data-testid="login-form"
-          id="basic"
+        <div
+          class="DynamicForm__FormContainer-sc-1ttvbzz-0 gXTkoJ"
         >
-          <div>
-            <div
-              class="ant-row ant-form-item FormInput__CustomFormItem-ofxmhy-1 cElTSv"
-            >
+          <form
+            autocomplete="off"
+            class="ant-form ant-form-vertical DynamicForm__Form-sc-1ttvbzz-1 hUxbIT"
+            data-testid="login-form"
+            id="my-form"
+          >
+            <div>
               <div
-                class="ant-col ant-form-item-label"
-              >
-                <label
-                  class="ant-form-item-required"
-                  for="basic_username"
-                  title="Username"
-                >
-                  Username
-                </label>
-              </div>
-              <div
-                class="ant-col ant-form-item-control"
+                class="ant-row ant-form-item FormInput__CustomFormItem-ofxmhy-1 cElTSv"
               >
                 <div
-                  class="ant-form-item-control-input"
+                  class="ant-col ant-form-item-label"
+                >
+                  <label
+                    class="ant-form-item-required"
+                    for="basic_Username"
+                    title="Username"
+                  >
+                    Username
+                  </label>
+                </div>
+                <div
+                  class="ant-col ant-form-item-control"
                 >
                   <div
-                    class="ant-form-item-control-input-content"
+                    class="ant-form-item-control-input"
                   >
-                    <input
-                      class="ant-input FormInput__StyledInput-ofxmhy-0 iWohJH"
-                      data-testid="formInput"
-                      id="basic_username"
-                      type="text"
-                      value=""
-                    />
+                    <div
+                      class="ant-form-item-control-input-content"
+                    >
+                      <input
+                        class="ant-input FormInput__StyledInput-ofxmhy-0 iWohJH"
+                        data-testid="formInput"
+                        id="basic_Username"
+                        type="text"
+                        value=""
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </form>
-      </div>
-      <div
-        style="display: flex;"
-      >
-        <button
-          class="ant-btn ant-btn-primary Button__B-sc-10epy5l-0 jyXgnZ"
-          messageid="next"
-          type="button"
+          </form>
+        </div>
+        <div
+          style="display: flex;"
         >
-          <p
-            class="T__StyledText-gcrjip-0 gIxZML"
-            data-testid="t"
+          <button
+            class="ant-btn ant-btn-primary Button__B-sc-10epy5l-0 jyXgnZ"
+            messageid="next"
+            type="button"
           >
-            Next
-          </p>
-        </button>
+            <p
+              class="T__StyledText-gcrjip-0 gIxZML"
+              data-testid="t"
+            >
+              Next
+            </p>
+          </button>
+        </div>
       </div>
     </div>
   </div>

@@ -16,13 +16,13 @@
   "label_username": "Username",
   "label_emailId": "EmailId",
   "label_password": "Password",
-  "username": "username",
-  "emailId": "emailId",
-  "password": "password",
   "msg_for_username": "Please input your username!",
   "msg_for_emailid": "Please input your emailid!",
   "msg_for_password": "Please input your password!",
   "prev": "Prev",
   "submit": "Submit",
-  "next": "Next"
+  "next": "Next",
+  "email": "Email Address",
+  "username": "Username",
+  "password": "Password"
 }
