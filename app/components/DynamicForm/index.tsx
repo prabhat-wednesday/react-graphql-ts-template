@@ -16,15 +16,15 @@ const Form = styled(F)`
 `;
 interface DynamicStepFormProps {
   formInput: StepperLoginFormInputInterface;
-  handleFormChange: (value: FormInstance<any>) => void;
+  handleFormInstance: (value: FormInstance<any>) => void;
   handleSubmit: (value: any) => void;
 }
 
-const DynamicStepForm = ({ formInput, handleSubmit, handleFormChange }: DynamicStepFormProps) => {
+const DynamicStepForm = ({ formInput, handleSubmit, handleFormInstance }: DynamicStepFormProps) => {
   const [form] = Form.useForm();
 
   useEffect(() => {
-    handleFormChange(form);
+    handleFormInstance(form);
   }, [form]);
 
   const onFinish = (values: any) => {

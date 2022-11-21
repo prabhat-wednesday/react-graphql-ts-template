@@ -77,19 +77,12 @@ describe('<LoginContainer tests', () => {
     const { getByRole } = renderWithIntl(<LoginContainer dispatchUserData={submitSpy} />);
     const NextButton = getByRole('button', { name: /Next/i });
     expect(NextButton).toBeInTheDocument();
+    fireEvent.click(NextButton);
   });
 
-  it('should check prev button and next button get load on the screen when currentIndex is one', async () => {
-    const { getByRole, getByTestId } = renderWithIntl(<LoginContainer dispatchUserData={submitSpy} />);
-    const loginForm = getByTestId('formInput');
-    fireEvent.change(loginForm, {
-      target: { value: 'Prabhat' }
-    });
-    const nextButton = getByRole('button', { name: /Next/i });
-    fireEvent.click(nextButton);
-    await timeout(500);
-    const prevButton = getByRole('button', { name: /Prev/i });
-    expect(nextButton).toBeInTheDocument();
-    expect(prevButton).toBeInTheDocument();
+  it('should check next button get load on the screen currentIndex is zero', () => {
+    const { getByRole } = renderWithIntl(<LoginContainer dispatchUserData={submitSpy} />);
+    const NextButton = getByRole('button', { name: /Next/i });
+    expect(NextButton).toBeInTheDocument();
   });
 });

@@ -1,7 +1,7 @@
 import React from 'react';
+import { fireEvent } from '@testing-library/react';
 import { renderProvider, renderWithIntl } from '@app/utils/testUtils';
 import DynamicStepForm from '..';
-import { fireEvent } from '@testing-library/react';
 
 describe('<DynamicStepForm/> test', () => {
   const onClickSpy = jest.fn();
@@ -9,7 +9,7 @@ describe('<DynamicStepForm/> test', () => {
   const defaultProps = {
     formInput: { label: 'label_username', name: 'username', rules: [{ message: 'msg_for_username', required: true }] },
     handleSubmit: onSubmitSpy,
-    handleFormChange: onClickSpy
+    handleFormInstance: onClickSpy
   };
   it('should render and match the snapshot', () => {
     const { baseElement } = renderWithIntl(<DynamicStepForm {...defaultProps} />);

@@ -45,7 +45,7 @@ const LoginContainer = ({ dispatchUserData }: LoginContainerProps) => {
       .then(() => {
         setCurrentIndex((next) => next + 1);
       })
-      .catch();
+      .catch(() => {});
   };
 
   const handlePrev = () => {
@@ -55,7 +55,8 @@ const LoginContainer = ({ dispatchUserData }: LoginContainerProps) => {
   const handleSubmit = (values: any) => {
     dispatchUserData(values);
   };
-  const handleFormChange = (f: FormInstance<any>) => {
+
+  const handleFormInstance = (f: FormInstance<any>) => {
     (form as MutableRefObject<FormInstance>).current = f;
   };
   return (
@@ -63,7 +64,7 @@ const LoginContainer = ({ dispatchUserData }: LoginContainerProps) => {
       <StepsComponent currentIndex={currentIndex} stepsMsg={getStepMessages()} />
       <CustomFormContainer>
         <DynamicStepForm
-          handleFormChange={handleFormChange}
+          handleFormInstance={handleFormInstance}
           formInput={getStepperLoginFormInputConstants()[currentIndex]}
           handleSubmit={handleSubmit}
         />
