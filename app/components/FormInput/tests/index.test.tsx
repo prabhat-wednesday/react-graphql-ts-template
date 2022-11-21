@@ -14,7 +14,7 @@ describe('<FormInput/> component test', () => {
     required: true
   };
   it('should render and match the snapshot', () => {
-    const { baseElement } = renderProvider(<FormInput {...FormInputProps} />);
+    const { baseElement } = renderWithIntl(<FormInput {...FormInputProps} />);
     expect(baseElement).toMatchSnapshot();
   });
 

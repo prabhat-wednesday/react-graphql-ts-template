@@ -7,148 +7,162 @@ exports[`<LoginContainer tests should render and match the snapshot 1`] = `
       class="LoginContainer__Container-sk1ioa-0 jvcMSm"
     >
       <div
-        class="LoginContainer__FormContainer-sk1ioa-1 eYjOur"
+        class="ant-steps ant-steps-horizontal StepsComponent__CustomStep-ymgfaa-0 kQDDmx ant-steps-label-horizontal"
       >
-        <form
-          autocomplete="off"
-          class="ant-form ant-form-horizontal"
-          data-testid="loginForm"
-          id="basic"
+        <div
+          class="ant-steps-item ant-steps-item-process ant-steps-item-active"
         >
           <div
-            class="For__FlexContainer-sc-26ssez-0 cXKcda"
-            data-testid="for"
-            orientation="column"
+            class="ant-steps-item-container"
           >
             <div
-              class="ant-row ant-form-item"
+              class="ant-steps-item-tail"
+            />
+            <div
+              class="ant-steps-item-icon"
             >
-              <div
-                class="ant-col ant-form-item-label"
+              <span
+                class="ant-steps-icon"
               >
-                <label
-                  class="ant-form-item-required"
-                  for="basic_username"
-                  title="Username"
-                >
-                  Username
-                </label>
-              </div>
-              <div
-                class="ant-col ant-form-item-control"
-              >
-                <div
-                  class="ant-form-item-control-input"
-                >
-                  <div
-                    class="ant-form-item-control-input-content"
-                  >
-                    <input
-                      class="ant-input FormInput__StyledInput-ofxmhy-0 iWohJH"
-                      data-testid="formInput"
-                      id="basic_username"
-                      type="text"
-                      value=""
-                    />
-                  </div>
-                </div>
-              </div>
+                1
+              </span>
             </div>
             <div
-              class="ant-row ant-form-item"
+              class="ant-steps-item-content"
             >
               <div
-                class="ant-col ant-form-item-label"
+                class="ant-steps-item-title"
               >
-                <label
-                  class="ant-form-item-required"
-                  for="basic_emailId"
-                  title="EmailId"
-                >
-                  EmailId
-                </label>
-              </div>
-              <div
-                class="ant-col ant-form-item-control"
-              >
-                <div
-                  class="ant-form-item-control-input"
-                >
-                  <div
-                    class="ant-form-item-control-input-content"
-                  >
-                    <input
-                      class="ant-input FormInput__StyledInput-ofxmhy-0 iWohJH"
-                      data-testid="formInput"
-                      id="basic_emailId"
-                      type="text"
-                      value=""
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="ant-row ant-form-item"
-            >
-              <div
-                class="ant-col ant-form-item-label"
-              >
-                <label
-                  class="ant-form-item-required"
-                  for="basic_password"
-                  title="Password"
-                >
-                  Password
-                </label>
-              </div>
-              <div
-                class="ant-col ant-form-item-control"
-              >
-                <div
-                  class="ant-form-item-control-input"
-                >
-                  <div
-                    class="ant-form-item-control-input-content"
-                  >
-                    <input
-                      class="ant-input FormInput__StyledInput-ofxmhy-0 iWohJH"
-                      data-testid="formInput"
-                      id="basic_password"
-                      type="text"
-                      value=""
-                    />
-                  </div>
-                </div>
+                Username
               </div>
             </div>
           </div>
+        </div>
+        <div
+          class="ant-steps-item ant-steps-item-wait"
+        >
           <div
-            class="ant-row ant-form-item"
+            class="ant-steps-item-container"
           >
             <div
-              class="ant-col ant-form-item-control"
+              class="ant-steps-item-tail"
+            />
+            <div
+              class="ant-steps-item-icon"
+            >
+              <span
+                class="ant-steps-icon"
+              >
+                2
+              </span>
+            </div>
+            <div
+              class="ant-steps-item-content"
             >
               <div
-                class="ant-form-item-control-input"
+                class="ant-steps-item-title"
               >
-                <div
-                  class="ant-form-item-control-input-content"
-                >
-                  <button
-                    class="ant-btn ant-btn-primary"
-                    data-testid="submitButton"
-                    type="submit"
-                  >
-                    <span>
-                      Submit
-                    </span>
-                  </button>
-                </div>
+                Email Address
               </div>
             </div>
           </div>
-        </form>
+        </div>
+        <div
+          class="ant-steps-item ant-steps-item-wait"
+        >
+          <div
+            class="ant-steps-item-container"
+          >
+            <div
+              class="ant-steps-item-tail"
+            />
+            <div
+              class="ant-steps-item-icon"
+            >
+              <span
+                class="ant-steps-icon"
+              >
+                3
+              </span>
+            </div>
+            <div
+              class="ant-steps-item-content"
+            >
+              <div
+                class="ant-steps-item-title"
+              >
+                Password
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="LoginContainer__CustomFormContainer-sk1ioa-1 lohJtR"
+      >
+        <div
+          class="DynamicForm__FormContainer-sc-1ttvbzz-0 gXTkoJ"
+        >
+          <form
+            autocomplete="off"
+            class="ant-form ant-form-vertical DynamicForm__Form-sc-1ttvbzz-1 hUxbIT"
+            data-testid="login-form"
+            id="my-form"
+          >
+            <div>
+              <div
+                class="ant-row ant-form-item FormInput__CustomFormItem-ofxmhy-1 cElTSv"
+              >
+                <div
+                  class="ant-col ant-form-item-label"
+                >
+                  <label
+                    class="ant-form-item-required"
+                    for="basic_Username"
+                    title="Username"
+                  >
+                    Username
+                  </label>
+                </div>
+                <div
+                  class="ant-col ant-form-item-control"
+                >
+                  <div
+                    class="ant-form-item-control-input"
+                  >
+                    <div
+                      class="ant-form-item-control-input-content"
+                    >
+                      <input
+                        class="ant-input FormInput__StyledInput-ofxmhy-0 iWohJH"
+                        data-testid="formInput"
+                        id="basic_Username"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div
+          style="display: flex;"
+        >
+          <button
+            class="ant-btn ant-btn-primary Button__B-sc-10epy5l-0 jyXgnZ"
+            messageid="next"
+            type="button"
+          >
+            <p
+              class="T__StyledText-gcrjip-0 gIxZML"
+              data-testid="t"
+            >
+              Next
+            </p>
+          </button>
+        </div>
       </div>
     </div>
   </div>
